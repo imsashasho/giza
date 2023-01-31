@@ -1,0 +1,133 @@
+.contact {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/contact/bg.jpg);
+    &-wrap {
+        padding: 150px 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 100%;
+
+        @include tablet {
+            padding: 100px 10px;
+        }
+
+        @include mobile {
+            padding: 60px 12px;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    }
+    &-intro {
+        width: 50%;
+
+        @include mobile {
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+    &-intro__title {
+        text-decoration-line: underline;
+        color: $textLightGrey;
+        width: 35%;
+
+        @include mobile {
+            width: 100%;
+        }
+
+
+    }
+    &-main {
+        width: 50%;
+
+        @include mobile {
+            width: 100%;
+        }
+
+    }
+    &-socials {
+
+    }
+    &-socials-list {
+        max-width: 722px;
+        padding: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        background: rgba(8, 16, 25, 0.9);
+
+        @include tabletLarge {
+            max-width: 644px;
+        }
+
+        @include tablet {
+            flex-direction: column;
+        }
+
+        @include mobile {
+            padding: 32px;
+        }
+
+
+    }
+    &-socials-card {
+        width: 50%;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+
+        @include tabletLarge {
+            margin-bottom: 32px;
+        }
+
+        @include tablet {
+            width: 100%;
+        }
+
+        &:nth-last-child(-n+2) {
+            margin-bottom: 0;
+
+            @include tablet {
+                margin-bottom: 32px;
+            }
+        }
+
+        &:last-child {
+            @include tablet {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+    &-socials-card__title {
+        margin-bottom: 8px;
+        color: $textLightGrey;
+
+    }
+    &-socials-card__descr {
+        margin-bottom: 8px;
+        color: $textGrey;
+
+    }
+    &-socials-card__link {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 120%;
+        text-decoration-line: underline;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+    }
+    &-socials-card__link--simple {
+        color: $textGrey;
+        margin-bottom: 8px;
+
+        &:nth-last-of-type(-n+1) {
+            margin-bottom: 0;
+        }
+    }
+}

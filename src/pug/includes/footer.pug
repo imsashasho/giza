@@ -1,0 +1,25 @@
+footer.footer
+  .footer-wrap
+    .footer-menu-wrap 
+        .footer-menu
+            a(href="index.html").footer-menu-link.text-descr-uppercase ГОЛОВНА
+            a(href="about.html").footer-menu-link.text-descr-uppercase ПРО КОМПАНІЮ
+            a(href="projects.html").footer-menu-link.text-descr-uppercase ПРОЄКТИ
+            a(href="news.html").footer-menu-link.text-descr-uppercase АКЦІЇ ТА НОВИНИ
+            a(href="contacts.html").footer-menu-link.text-descr-uppercase КОНТАКТИ
+    .footer-form-wrap
+        .noise
+        .footer-form
+            h2.footer-form__title.text-title Залишились запитання?
+            p.footer-form__descr.text-descr Залиште свої контакти і наш менеджер зв'яжеться з вами протягом 10-ти хвилин.
+                form.footer-form__form(id="call-form")
+                    p.footer-form__hint.text-descr Введіть ваш номер телефону
+                    .footer-form__field.form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+                        .input-message(data-input-message)
+                        input.footer-form__input(type="tel" name="phone" placeholder="Телефон")
+                    .footer-form__btn-wrap
+                        button.footer-form__btn.btn-small.js-call-submit(type="submit" data-btn-submit-footer)
+                            +svg('arrow')
+                            span.footer-form__btn-text(data-btn-submit-text)
+        button.footer-up.btn-small
+            +svg('arrow')

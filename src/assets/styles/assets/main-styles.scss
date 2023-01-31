@@ -1,0 +1,258 @@
+.container {
+  padding: 0 70px;
+  margin: 0 auto;
+
+  @include tablet {
+    padding: 0 10px;
+  }
+
+  @include mobile {
+    padding: 0 20px;
+  }
+}
+
+button {
+  background-color: inherit;
+}
+
+.btn {
+  border: none;
+  text-decoration: none;
+  outline: none; 
+  display: flex;
+  width: fit-content;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  padding: 21.5px 40px;
+  background: $mc1;
+  font-family: $default-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: $mc2;
+
+  @include tabletLarge {
+    font-size: 14px;
+
+  }
+
+}
+
+.btn-dark {
+  background: $mc1;
+}
+
+.btn-light {
+  color: $mc2;
+  background: transparent;
+  border: 1px solid $mc2;
+  @include tabletLarge {
+    font-size: 14px;
+  }
+
+
+}
+
+.btn-small {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	background: none;
+	border: 0;
+	width: 60px;
+	height: 60px;
+	padding: 0;
+	background: $mc1;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+  @include tabletLarge {
+    width: 52px;
+    height: 52px;
+  }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: $textLightGrey;
+      stroke: $textLightGrey;
+      transform: rotate(270deg);
+    }
+}
+
+.main-card-wrap {
+  padding: 10px;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: 1px solid $mc1;
+  background: transparent;
+  -webkit-appearance: none;
+
+  @include tabletLarge {
+    width: 52px;
+    height: 52px;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: $mc1;
+    stroke: $mc1;
+  }
+
+}
+
+.slider-btn--next {
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.slider-btn--prev {
+  margin-right: 8px;
+}
+
+.swiper-button-prev:after {
+  display: none;
+}
+
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+.btn
+:focus {
+	/* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+	outline: none;
+	background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+	/* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+	background: transparent;
+}
+
+a:focus-visible {
+	/* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+	outline: 2px solid $mc1;
+	background: transparent;
+}
+
+.text {
+  &-title {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 120%;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 36px;
+    }
+  }
+
+  &-medium-uppercase {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+  }
+
+  &-descr{
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+
+    @include tabletLarge {
+      font-size: 20px;
+    }
+
+  }
+
+  &-descr-uppercase {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    text-transform: uppercase;
+
+    @include tabletLarge {
+      font-size: 20px;
+    }
+  }
+
+  &-header {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $mc1;
+    transition: all ease-in-out 0.3s;
+  }
+}
+
+.main-page-wrap {
+  padding: 90px 80px 100px 80px;
+
+  @include tablet {
+    padding: 110px 10px 100px 10px;
+  }
+
+  @include mobile {
+    padding: 86px 12px 60px 12px;
+  }
+
+}
+.main-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  @include tablet {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+
+    .breadcrumbs {
+      margin-bottom: 10px;
+    }
+  }
+
+    @include mobile {
+      margin-bottom: 12px;
+  }
+
+}
+.main-intro__title {
+  color: $bc;
+}
