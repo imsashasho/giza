@@ -15,6 +15,10 @@ button {
   background-color: inherit;
 }
 
+a {
+  text-decoration: none;
+}
+
 .btn {
   border: none;
   text-decoration: none;
@@ -118,6 +122,20 @@ button {
 
 }
 
+.slider-btn-light {
+
+  color: $mc2;
+  background: transparent;
+  border: 1px solid $mc2;
+    svg {
+      fill: $mc2;
+      stroke: $mc2;
+    }
+
+}
+
+
+
 .slider-btn--next {
   svg {
     transform: rotate(180deg);
@@ -157,6 +175,18 @@ a:focus-visible {
 }
 
 .text {
+
+  &-header {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $mc1;
+    transition: all ease-in-out 0.3s;
+  }
   &-title {
     font-family: $default-font;
     font-style: normal;
@@ -185,9 +215,8 @@ a:focus-visible {
     font-family: $default-font;
     font-style: normal;
     font-weight: 300;
-    font-size: 24px;
-    line-height: 120%;
-    letter-spacing: -0.05em;
+    font-size: 14px;
+    line-height: 140%;
 
     @include tabletLarge {
       font-size: 20px;
@@ -198,26 +227,14 @@ a:focus-visible {
   &-descr-uppercase {
     font-family: $default-font;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 20px;
-    line-height: 120%;
+    line-height: 140%;
     text-transform: uppercase;
 
     @include tabletLarge {
       font-size: 20px;
     }
-  }
-
-  &-header {
-    font-family: $default-font;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 120%;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-    color: $mc1;
-    transition: all ease-in-out 0.3s;
   }
 }
 

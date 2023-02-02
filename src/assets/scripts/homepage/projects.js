@@ -1,4 +1,3 @@
-import { paralax } from '../common/paralax';
 
 const swiper = new Swiper('.projects-swiper', {
   grabCursor: true,

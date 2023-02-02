@@ -1,5 +1,5 @@
 .news {
-    background: $wc;
+    background: $mc1;
     height: fit-content;
 
     &-wrap {
@@ -34,7 +34,7 @@
 
     }
     &-intro__title {
-        color: $bc;
+        color: $mc2;
         margin-bottom: 20px;
 
         @include tablet {
@@ -84,12 +84,12 @@
     }
     &-intro-slide__title {
         opacity: 0;
-        color: $bc;
+        color: $mc2;
         margin-bottom: 12px;
 
     }
     &-intro-slide__descr {
-        color: $textGreySpecial;
+        color: $textGrey;
         margin-bottom: 20px;
 
     }
@@ -210,7 +210,7 @@
         
         width: 100%;
         height: 2px;
-        background-color: rgba(74, 58, 94, 0.15);
+        background-color: rgba(166, 162, 153, 0.2);
         margin-top: 50px;
         position: relative;
 
@@ -219,7 +219,8 @@
         }
 
         .swiper-pagination-progressbar-fill {
-            background: #000000 !important;
+
+            background: $mc2 !important;
 
         }
         

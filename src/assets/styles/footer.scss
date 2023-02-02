@@ -20,7 +20,7 @@
 
   &-wrap {
     display: flex;
-    background: $wc;
+    background: $mc2;
 
     @include mobile {
       flex-direction: column-reverse;
@@ -29,7 +29,7 @@
   }
   &-menu-wrap {
     padding: 150px 80px 115px 80px;
-    width: 35%;
+    width: 32%;
 
     @include tablet {
       padding: 100px 10px 115px 10px;
@@ -47,7 +47,7 @@
   }
   &-menu-link {
     margin-bottom: 12px;
-    color: $bc;
+    color: $mc1;
 
     &:last-child {
       margin-bottom: 0;
@@ -56,7 +56,7 @@
   }
   &-form-wrap {
     padding: 150px 80px 115px 80px;
-    width: 65%;
+    width: 68%;
     position: relative;
     display: flex;
     justify-content: center;
