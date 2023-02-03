@@ -1,17 +1,4 @@
 .contacts-page {
     &-wrap {
-        .main-intro {
-            
-            padding: 90px 80px 20px 80px;
-            margin-bottom: 0;
-
-            @include tablet {
-                padding: 110px 10px 20px 10px;
-            }
-
-            @include mobile {
-                padding: 86px 12px 20px 12px;
-            }
-        }
     }
 }

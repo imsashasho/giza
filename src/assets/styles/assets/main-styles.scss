@@ -52,7 +52,8 @@ a {
 .btn-light {
   color: $mc2;
   background: transparent;
-  border: 1px solid $mc2;
+  border: 1px solid $textGrey;
+
   @include tabletLarge {
     font-size: 14px;
   }
@@ -238,8 +239,24 @@ a:focus-visible {
   }
 }
 
+.main-page-header-wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.main-page-header-wrap--img {
+  padding: 160px 0 100px 0;
+}
+
+.main-page-header-wrap--black {
+  padding: 160px 0 50px;
+}
+
 .main-page-wrap {
-  padding: 90px 80px 100px 80px;
+  padding: 0 70px 150px 70px;
 
   @include tablet {
     padding: 110px 10px 100px 10px;
@@ -252,9 +269,9 @@ a:focus-visible {
 }
 .main-intro {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
 
   @include tablet {
     flex-direction: column-reverse;
@@ -271,5 +288,6 @@ a:focus-visible {
 
 }
 .main-intro__title {
-  color: $bc;
+  color: $mc2;
+  text-align: center;
 }

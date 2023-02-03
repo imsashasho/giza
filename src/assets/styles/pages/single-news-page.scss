@@ -1,21 +1,13 @@
 .single-news {
     &-page {
-        background: $wc;
-        .main-intro {
-            flex-direction: column-reverse;
-            align-items: flex-start;
+        background: $mc1;
 
-            @include mobile {
-                margin-bottom: 12px;
-            }
-
-            .breadcrumbs {
-                margin-bottom: 10px;
-            }
+        .news-list {
+            margin-bottom: 0;
 
         }
-
     }
+
     &-card-wrap {
         margin-bottom: 100px;
 
@@ -25,10 +17,10 @@
 
     }
     &-card {
-        padding: 60px 51px;
+        padding: 74px;
         display: flex;
         justify-content: space-between;
-        background: $mc2;
+        border: 1px solid $border;
 
         @include tablet {
             padding: 40px;
@@ -56,12 +48,12 @@
 
     }
     &-card-item__title {
-        color: $bc;
+        color: $mc2;
         margin-bottom: 12px;
 
     }
     &-card__descr {
-        color: $textCardGrey;
+        color: $textGrey;
         margin-bottom: 10px;
 
         &:last-child {
@@ -73,7 +65,7 @@
 
     }
     &-card-list__item {
-        color: $textCardGrey;
+        color: $textGrey;
         margin-bottom: 10px;
         &:last-child {
             margin-bottom: 0;
@@ -98,7 +90,8 @@
     }
 
     &-last-updates__title {
-        color: $bc;
+        color: $mc2;
+        text-align: center;
         margin-bottom: 40px;
 
         @include tablet {

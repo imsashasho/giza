@@ -62,7 +62,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-image: url('../images/about/noise.jpg');
+    background-image: url('../images/footer-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -183,16 +183,16 @@
 
 }
 
-.noise::before{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100%;
-  content: "";
-  /* you can control opacity of noise  */
-  opacity: 0.05;  
-  z-index: 1;
-  pointer-events: none;
-  background: url('../images/noise.gif') ;
-}
+// .noise::before{
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100%;
+//   content: "";
+//   /* you can control opacity of noise  */
+//   opacity: 0.05;  
+//   z-index: 1;
+//   pointer-events: none;
+//   background: url('../images/noise.gif') ;
+// }

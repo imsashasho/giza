@@ -3,9 +3,22 @@
         background: $wc;
 
     }
-    &-list-wrap {
+
+    &-main-intro {
+        background-image: url('../images/newsPage/bg-news.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
 
     }
+
+    &-list-wrap {
+        padding: 70px;
+        background: $mc1;
+
+    }
+
+
     &-list {
         display: flex;
         justify-content: space-between;
@@ -22,10 +35,12 @@
     &-item {
         display: flex;
         justify-content: space-between;
-        background: $mc2;
-        padding: 32px;
+        background: transparent;
+        border: 1px solid $border;
+        padding: 40px;
         max-width: calc(50% - 10px);
         margin-bottom: 20px;
+
 
         @include tabletLarge {
             padding: 20px;
@@ -90,7 +105,7 @@
 
     }
     &-item__title {
-        color: $bc;
+        color: $mc2;
         margin-bottom: 12px;
 
     }
