@@ -1,94 +1,34 @@
-section.projects-page
-    .main-page-wrap
-        .main-intro 
-            h1.main-intro__title.text-title Проєкти
-            block breadcrumbs
-                include ../breadcrumbs.pug
-        .projects-list-wrap
-            .projects-list
-                .projects-card 
-                    .projects-card-intro 
-                        h2.projects-card-title ЖК White Tower
-                        .projects-card-block 
-                            p.projects-card-block__title МІСЦЕЗНАХОДЖЕННЯ:
-                            p.projects-card-block__descr.text-descr Кропивницкий, Подольский р-н
-                        .projects-card-block 
-                            p.projects-card-block__title ЗАГАЛЬНА КІЛЬКІСТЬ КВАРТИР:
-                            p.projects-card-block__descr.text-descr 261 шт
-                        .projects-card-block 
-                            p.projects-card-block__title ПЛОЩА ЖИТЛОВОГО ФОНДУ:
-                            p.projects-card-block__descr.text-descr 77 650 м²
-                        .projects-card-block 
-                            p.projects-card-block__title ЗАГАЛЬНА ПЛОЩА:
-                            p.projects-card-block__descr.text-descr 50 505 м²
-                        .projects-card-block 
-                            p.projects-card-block__title статус
-                            p.projects-card-block__descr.text-descr Введено в експлуатацію
-                        a(href="single-project.html").projects-card-btn.btn Дізнатися більше
-                    .projects-card-img-wrap 
-                        img(src="./assets/images/projectsPage/1.jpg", alt="").projects-card-img
-                .projects-card 
-                    .projects-card-intro 
-                        h2.projects-card-title ЖК 3V Volkova
-                        .projects-card-block 
-                            p.projects-card-block__title МІСЦЕЗНАХОДЖЕННЯ:
-                            p.projects-card-block__descr.text-descr Кропивницкий, Подольский р-н
-                        .projects-card-block 
-                            p.projects-card-block__title ЗАГАЛЬНА КІЛЬКІСТЬ КВАРТИР:
-                            p.projects-card-block__descr.text-descr 261 шт
-                        .projects-card-block 
-                            p.projects-card-block__title ПЛОЩА ЖИТЛОВОГО ФОНДУ:
-                            p.projects-card-block__descr.text-descr 77 650 м²
-                        .projects-card-block 
-                            p.projects-card-block__title ЗАГАЛЬНА ПЛОЩА:
-                            p.projects-card-block__descr.text-descr 50 505 м²
-                        .projects-card-block 
-                            p.projects-card-block__title статус
-                            p.projects-card-block__descr.text-descr Введено в експлуатацію
-                        a(href="single-project.html").projects-card-btn.btn Дізнатися більше
-                    .projects-card-img-wrap 
-                        img(src="./assets/images/projectsPage/2.jpg", alt="").projects-card-img
-                .projects-card 
-                    .projects-card-intro 
-                        h2.projects-card-title ЖК White Tower
-                        .projects-card-block 
-                            p.projects-card-block__title МІСЦЕЗНАХОДЖЕННЯ:
-                            p.projects-card-block__descr.text-descr Кропивницкий, Подольский р-н
-                        .projects-card-block 
-                            p.projects-card-block__title ЗАГАЛЬНА КІЛЬКІСТЬ КВАРТИР:
-                            p.projects-card-block__descr.text-descr 261 шт
-                        .projects-card-block 
-                            p.projects-card-block__title ПЛОЩА ЖИТЛОВОГО ФОНДУ:
-                            p.projects-card-block__descr.text-descr 77 650 м²
-                        .projects-card-block 
-                            p.projects-card-block__title ЗАГАЛЬНА ПЛОЩА:
-                            p.projects-card-block__descr.text-descr 50 505 м²
-                        .projects-card-block 
-                            p.projects-card-block__title статус
-                            p.projects-card-block__descr.text-descr Введено в експлуатацію
-                        a(href="single-project.html").projects-card-btn.btn Дізнатися більше
-                    .projects-card-img-wrap 
-                        img(src="./assets/images/projectsPage/1.jpg", alt="").projects-card-img
-                .projects-card 
-                    .projects-card-intro 
-                        h2.projects-card-title ЖК 3V Volkova
-                        .projects-card-block 
-                            p.projects-card-block__title МІСЦЕЗНАХОДЖЕННЯ:
-                            p.projects-card-block__descr.text-descr Кропивницкий, Подольский р-н
-                        .projects-card-block 
-                            p.projects-card-block__title ЗАГАЛЬНА КІЛЬКІСТЬ КВАРТИР:
-                            p.projects-card-block__descr.text-descr 261 шт
-                        .projects-card-block 
-                            p.projects-card-block__title ПЛОЩА ЖИТЛОВОГО ФОНДУ:
-                            p.projects-card-block__descr.text-descr 77 650 м²
-                        .projects-card-block 
-                            p.projects-card-block__title ЗАГАЛЬНА ПЛОЩА:
-                            p.projects-card-block__descr.text-descr 50 505 м²
-                        .projects-card-block 
-                            p.projects-card-block__title статус
-                            p.projects-card-block__descr.text-descr Введено в експлуатацію
-                        a(href="single-project.html").projects-card-btn.btn Дізнатися більше
-                    .projects-card-img-wrap 
-                        img(src="./assets/images/projectsPage/2.jpg", alt="").projects-card-img
-            button.projects-page-btn.btn більше проєктів
-
+main
+    section.projects-page.preview-wrap
+        .preview
+            .preview__img-wrap
+                .preview__img
+                    .preview__img-inner.swiper
+                        .swiper-wrapper.projects-swiper-wrapper
+                            .swiper-slide
+                                img(src="./assets/images/projectsPage/1.jpg" style="width:100%" alt="")
+            .preview__title
+                h2.preview__title-main
+                    span.oh
+                        span.oh__inner Andesite
+                    span.oh
+                        span.oh__inner aphanitic
+                p.preview__desc A volcanic rock of intermediate composition, between silica-poor basalt and silica-rich rhyolite.
+    section.content-wrap
+        .content
+            .content__group
+                .content__title
+                    span.oh
+                        span.oh__inner Andesite
+                    span.oh
+                        span.oh__inner aphaniti.content__meta.oh
+                    span.oh__inner By James Maurice Rojo
+                .content__text Andesite (/ˈændəzaɪt/) is a volcanic rock of intermediate composition. In a general sense, it is the intermediate type between silica-poor basalt and silica-rich rhyolite. 
+            .content__thumbs
+                .content__thumbs-item(style="background-image:url(./assets/images/projectsPage/1_1.jpg)")
+                .content__thumbs-item(style="background-image:url(./assets/images/projectsPage/1_2.jpg)")
+                .content__thumbs-item(style="background-image:url(./assets/images/projectsPage/1_3.jpg)")
+                .content__thumbs-item(style="background-image:url(./assets/images/projectsPage/1_4.jpg)")
+            .button.unbutton.action.action--back
+                <svg width="25px" height="25px" viewBox="0 0 25 25"><path d="M24 12.001H2.914l5.294-5.295-.707-.707L1 12.501l6.5 6.5.707-.707-5.293-5.293H24v-1z"/></svg>
+                span Go back

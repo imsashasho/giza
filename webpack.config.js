@@ -8,6 +8,7 @@ const config = {
     homepage: './src/assets/scripts/homepage/index.js',
     about: './src/assets/scripts/about/index.js',
     singleProject: './src/assets/scripts/singleProject/index.js',
+    projects: './src/assets/scripts/projects/index.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -37,6 +38,18 @@ const config = {
             loader: 'url-loader',
           },
         ],
+      },
+      {
+        test: /\.m?js$/,
+        exclude: {
+          and: [/node_modules/], // Exclude libraries in node_modules ...
+          not: [
+            // Except for a few of them that needs to be transpiled because they use modern syntax
+            /unfetch/,
+            /d3-array|d3-scale/,
+            /@hapi[\\/]joi-date/,
+          ]
+        },
       },
     ],
   },
