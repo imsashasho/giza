@@ -2,7 +2,7 @@
   "name": "build",
   "version": "1.0.0",
   "description": "work builder",
-  "main": "index.js",  
+  "main": "index.js",
   "scripts": {},
   "browserslist": [
     "last 3 version"
@@ -98,6 +98,7 @@
     "locomotive-scroll": "^4.0.6",
     "on-change": "^2.2.1",
     "parcel-bundler": "^1.12.5",
+    "split-type": "^0.3.3",
     "swiper": "^6.4.8",
     "three": "^0.148.0",
     "url-loader": "^4.1.1",

@@ -1,3 +1,4 @@
+// const { default: Lenis } = require("@studio-freight/lenis");
 
 
 /**
@@ -257,28 +258,48 @@ previewElems.forEach((item, pos) => {
 });
 const backCtrl = document.querySelector('.action--back');
 
-// Smooth scrolling.
+// // Smooth scrolling.
 let lenis;
 // Current open item's position
 let currentItem = -1;
 
 let isAnimating = false;
+// const pageInnerRef = document.querySelector('.page__inner');
+// const pageInnerContentRef = document.querySelector('.page__content');
 
 const initSmoothScrolling = () => {
 	// Smooth scrolling initialization (using Lenis https://github.com/studio-freight/lenis)
 	lenis = new Lenis({
 		lerp: 0.1,
+		// smooth: true,
+		// direction: 'vertical',
+		// wrapper: window.document.querySelector('.page__inner'),
+		// content: window.document.querySelector('.page__content'),
+
+		duration: 1.2,
+		// easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+		direction: 'vertical', // vertical, horizontal
 		smooth: true,
-		direction: 'vertical',
+		smoothTouch: false,
+		touchMultiplier: 2,
+		infinite: false,
 	});
-	const scrollFn = () => {
-		lenis.raf();
-		requestAnimationFrame(scrollFn);
+
+	//get scroll value
+	lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
+		ScrollTrigger.update()
+	  })
+
+	const raf = (time) => {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
 	};
-	requestAnimationFrame(scrollFn);
+	requestAnimationFrame(raf);
+	
 };
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(Flip);
 
 const animateOnScroll = () => {
 
@@ -333,7 +354,7 @@ const showContent = item => {
 			// Stop the "animate on scroll" timeline for this item
 			//item.scrollTimeline.pause();
 			// Stop the Lenis instance
-			lenis.stop();
+			// lenis.stop();
 			
 			// Overflow hidden and pointer events control class
 			document.body.classList.add('content-open');
@@ -441,7 +462,7 @@ const hideContent = () => {
 			//item.scrollTimeline.play();
 
 			// Start the Lenis instance
-			lenis.start();
+			// lenis.start();
 
 			// Overflow hidden and pointer events control class
 			document.body.classList.remove('content-open');
@@ -541,20 +562,16 @@ preloadImages('.preview__img-inner, .content__thumbs-item').then( _ => {
 
 
 const swiper = new Swiper('.preview__img-inner', {
-    grabCursor: true,
     loop: true,
     keyboard: true,
-    spaceBetween: 50,
+    spaceBetween: 0,
     initialSlide: 0,
-    preloadImages: false,
+	slidesPerView: 1,
     lazy: true,
     watchSlidesVisibility: true,
     speed: 300,
     breakpoints: {
       1400: {
-        spaceBetween: 50,
-        autoHeight: true,
-        slidesPerView: 1,
         centeredSlides: false,
         loop: false,
       },
@@ -572,5 +589,4 @@ const swiper = new Swiper('.preview__img-inner', {
         centeredSlides: false,
       },
     },
-    simulateTouch: true,
   });
