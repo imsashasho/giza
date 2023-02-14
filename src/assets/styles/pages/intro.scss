@@ -25,15 +25,18 @@
 	}
 	&-intro-text {
 		padding: 80px 122px 97px 60px;
-		height: 30.21%;
+		height: 100px;
+		// height: fit-content;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 
 	}
 	&-intro-logo {
+		display: flex;
 
-		height: 120px;
+
+		height: fit-content;
 		width: 318px;
 
 		svg {
