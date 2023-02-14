@@ -15,7 +15,12 @@
         justify-content: center;
         align-items: center;
         padding-left: 122px;
-        padding-right: 60px;
+        padding-right: 65px;
+
+        @include tabletLarge {
+            padding-left: 93px;
+            padding-right: 60px;
+        }
 
         @include tablet {
             width: 100%;
@@ -36,12 +41,19 @@
 
     &-intro-text {
         width: calc(50% - 75px);
+
+        @include tabletLarge {
+            width: calc(50% - 35px);
+        }
     }
 
     &-intro-img {
         width: calc(50% - 75px);
-        height: 100%;
-        max-height: 312px;
+
+        @include tabletLarge {
+            width: calc(50% - 35px);
+        }
+
             img {
                 height: 100%;
                 object-fit: cover;

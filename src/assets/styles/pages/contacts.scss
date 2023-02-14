@@ -1,18 +1,24 @@
 .contact {
     height: 512px;
+
+    @include tabletLarge {
+        height: 364px;
+    }
+
+    @include tablet {
+        height: 100%;
+    }
     &-wrap {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        height: 100%;
+        background: $mc2;
 
         @include tablet {
-            padding: 100px 10px;
+            flex-direction: column;
         }
 
         @include mobile {
-            padding: 60px 12px;
-            flex-direction: column;
             justify-content: flex-start;
         }
     }
@@ -25,17 +31,30 @@
             object-fit: cover;
             
         }
+
+        @include tablet {
+            width: 100%;
+        }
         
     }
     
     &-main {
         width: 68%;
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: flex-start;
         padding: 150px 80px 150px 245px;
         background: $mc2;
         height: inherit;
+
+        @include tabletLarge {
+            padding: 86px 70px 86px 179px;
+        }
+
+        @include tablet {
+            width: 100%;
+            padding: 50px 10px;
+        }
 
         @include mobile {
             width: 100%;
@@ -53,7 +72,7 @@
         }
 
         @include tablet {
-            flex-direction: column;
+            max-width: 100%;
         }
 
         @include mobile {
@@ -70,10 +89,6 @@
 
         @include tabletLarge {
             margin-bottom: 20px;
-        }
-
-        @include tablet {
-            width: 100%;
         }
 
         &:nth-last-child(-n+2) {

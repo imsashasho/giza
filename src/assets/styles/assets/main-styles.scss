@@ -19,6 +19,50 @@ a {
   text-decoration: none;
 }
 
+.btn-container{
+  position: relative;
+  width: fit-content;
+  height: 60px;
+  overflow: hidden;
+  border: 1px solid #000;
+  transition: 0.5s;
+ 
+ @-webkit-keyframes ani {
+  from {
+   -webkit-mask-position: 0 0;
+   mask-position: 0 0;
+  }
+ 
+  to {
+   -webkit-mask-position: 100% 0;
+   mask-position: 100% 0;
+  }
+ }
+ 
+ @-webkit-keyframes ani {
+  from {
+   -webkit-mask-position: 0 0;
+   mask-position: 0 0;
+  }
+ 
+  to {
+   -webkit-mask-position: 100% 0;
+   mask-position: 100% 0;
+  }
+ }
+ 
+ @keyframes ani {
+  from {
+   -webkit-mask-position: 0 0;
+   mask-position: 0 0;
+  }
+ 
+  to {
+   -webkit-mask-position: 100% 0;
+   mask-position: 100% 0;
+  }
+ }
+ 
 .btn {
   border: none;
   text-decoration: none;
@@ -37,6 +81,23 @@ a {
   line-height: 120%;
   text-transform: uppercase;
   color: $mc2;
+  width: 101%;
+   height: 100%;
+ 
+   @include button(#000, "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png",
+   2300%,
+   100%,
+   none,
+   #fff);
+   cursor: pointer;
+   -webkit-animation: ani2 0.7s steps(22) forwards;
+    animation: ani2 0.7s steps(22) forwards;
+
+    &:hover {
+    -webkit-animation: ani 0.7s steps(22) forwards;
+    animation: ani 0.7s steps(22) forwards;
+    }
+  }
 
   @include tabletLarge {
     font-size: 14px;
@@ -58,6 +119,29 @@ a {
     font-size: 14px;
   }
 
+
+}
+
+
+.btn-mask {
+  position: absolute;
+  color: $mc2;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  width: fit-content;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  padding: 21.5px 40px;
+  background: $mc2;
+  font-family: $default-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: $mc1;
 
 }
 
@@ -175,6 +259,12 @@ a:focus-visible {
 	background: transparent;
 }
 
+.title-container {
+  overflow: hidden;
+  height: fit-content;
+  width: fit-content;
+}
+
 .text {
 
   &-header {
@@ -195,6 +285,10 @@ a:focus-visible {
     font-size: 48px;
     line-height: 120%;
     text-transform: uppercase;
+
+    @include tabletLarge {
+      font-size: 43px;
+    }
 
     @include mobile {
       font-size: 36px;
@@ -219,10 +313,6 @@ a:focus-visible {
     font-size: 14px;
     line-height: 140%;
 
-    @include tabletLarge {
-      font-size: 20px;
-    }
-
   }
 
   &-descr-uppercase {
@@ -234,7 +324,7 @@ a:focus-visible {
     text-transform: uppercase;
 
     @include tabletLarge {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 }

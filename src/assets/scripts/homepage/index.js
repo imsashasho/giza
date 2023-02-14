@@ -6,3 +6,4 @@
 import './projects';
 import './news';
 import './animation';
+import '../common/lenisScroll'

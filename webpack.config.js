@@ -9,6 +9,7 @@ const config = {
     about: './src/assets/scripts/about/index.js',
     singleProject: './src/assets/scripts/singleProject/index.js',
     projects: './src/assets/scripts/projects/index.js',
+    news: './src/assets/scripts/news/index.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -40,16 +41,9 @@ const config = {
         ],
       },
       {
-        test: /\.m?js$/,
-        exclude: {
-          and: [/node_modules/], // Exclude libraries in node_modules ...
-          not: [
-            // Except for a few of them that needs to be transpiled because they use modern syntax
-            /unfetch/,
-            /d3-array|d3-scale/,
-            /@hapi[\\/]joi-date/,
-          ]
-        },
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto",
       },
     ],
   },

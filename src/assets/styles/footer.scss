@@ -22,7 +22,7 @@
     display: flex;
     background: $mc2;
 
-    @include mobile {
+    @include tablet {
       flex-direction: column-reverse;
     }
 
@@ -32,12 +32,13 @@
     width: 32%;
 
     @include tablet {
-      padding: 100px 10px 115px 10px;
+      padding: 50px 10px;
+      width: 100%;
     }
 
     @include mobile {
       padding: 60px 12px 115px 12px;
-      width: 100%;
+     
     }
   }
   &-menu {
@@ -67,12 +68,12 @@
     background-repeat: no-repeat;
 
     @include tablet {
-      padding: 100px 10px 115px 10px;
+      padding: 50px 10px;
+      width: 100%;
     }
 
     @include mobile {
       padding: 60px 12px;
-      width: 100%;
     }
   }
 

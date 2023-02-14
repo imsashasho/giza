@@ -24,8 +24,10 @@ header.header
         .header-call-wrap
             .header-number-wrap 
                 a(href="tel:+(90)28947777").header-number__link.text-header +(90) 28 94 7777
-            .header-callback-wrap 
-                button.header-callback__btn.btn Request a call
+            .header-callback-wrap
+                .btn-container
+                    .btn-mask Request a call
+                    button.header-callback__btn.btn Request a call
         .header-call-wrap-mobile
             a(href="tel:+(90)28947777").header-number__link-mobile.btn-small 
                 +svg('phone')

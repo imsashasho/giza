@@ -2,20 +2,20 @@ footer.footer
   .footer-wrap
     .footer-menu-wrap 
         .footer-menu
-            a(href="index.html").footer-menu-link.text-title ГОЛОВНА
-            a(href="about.html").footer-menu-link.text-title ПРО КОМПАНІЮ
-            a(href="projects.html").footer-menu-link.text-title ПРОЄКТИ
-            a(href="news.html").footer-menu-link.text-title АКЦІЇ ТА НОВИНИ
-            a(href="contacts.html").footer-menu-link.text-title КОНТАКТИ
+            a(href="index.html").footer-menu-link.text-title HOME
+            a(href="about.html").footer-menu-link.text-title ABOUT
+            a(href="projects.html").footer-menu-link.text-title PROJECTS
+            a(href="news.html").footer-menu-link.text-title NEWS
+            a(href="contacts.html").footer-menu-link.text-title CONTACTS
     .footer-form-wrap
         .footer-form
-            h2.footer-form__title.text-title Залишились запитання?
-            p.footer-form__descr.text-descr Залиште свої контакти і наш менеджер зв'яжеться з вами протягом 10-ти хвилин.
+            h2.footer-form__title.text-title Do you have any questions?
+            p.footer-form__descr.text-descr If you have any questions or need advice, our managers will be happy to help you!
+            p.footer-form__hint.text-descr Enter your phone number
                 form.footer-form__form(id="call-form")
-                    p.footer-form__hint.text-descr Введіть ваш номер телефону
                     .footer-form__field.form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
                         .input-message(data-input-message)
-                        input.footer-form__input(type="tel" name="phone" placeholder="Телефон")
+                        input.footer-form__input(type="tel" name="phone" placeholder="Phone")
                     .footer-form__btn-wrap
                         button.footer-form__btn.btn-small.js-call-submit(type="submit" data-btn-submit-footer)
                             +svg('arrow')
