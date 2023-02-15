@@ -1,2 +1,2 @@
 import '../common/lenisScroll'
-import './animation'
+import '../common/paralaxImages'

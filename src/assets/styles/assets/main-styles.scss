@@ -26,10 +26,15 @@ a {
   overflow: hidden;
   border: 1px solid $mc1;
   transition: 0.5s;
+  z-index: 10;
 
   @include tabletLarge {
     height: 50px;
   }
+}
+
+.btn-container-border {
+  border: 1px solid $textGreySpecial;
 }
 
 .btn-container--light {

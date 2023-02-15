@@ -2,6 +2,10 @@ import FormMonster from '../../../pug/components/form/form';
 import SexyInput from '../../../pug/components/input/input';
 import * as yup from 'yup';
 import i18next from 'i18next';
+import {gsap, ScrollTrigger} from 'gsap/all';
+
+
+gsap.registerPlugin(ScrollTrigger)
 
 const formsWithTel = ['#call-form'];
 
@@ -60,6 +64,19 @@ const initFooter = () => {
       top: 0,
     });
   }
+
+  // External footer link scroll animation
+
+  gsap.from('.footer-up', {
+    scrollTrigger: {
+      trigger: '.footer',
+      scrub: 2,
+      start: '50% 100%', // position of trigger meets the scroller position
+      end: '0% 0%',
+    },
+    y: 150,
+    ease: 'sine',
+  });
 
   footerUpRef.addEventListener('click', scrollToTop);
 };

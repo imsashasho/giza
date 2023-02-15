@@ -4,7 +4,7 @@
   left: 0;
   height: var(--header-h);
   width: 100%;
-  background: $mc2;
+  background: transparent;
   z-index: 100;
   transition: all ease-in-out 0.4s;
 
@@ -13,10 +13,80 @@
     background: $mc2;
   }
 
+  &.on {
+    background: $mc2;
+  }
+
   #change-color {
-    fill: $mc1!important;
+    fill: $mc2!important;
     transition: all ease-in-out 0.4s;
   }
+
+  .header-list-link {
+    color: $mc2;
+  }
+
+  .header-number__link {
+    color: $mc2;
+  }
+  
+  .header-lang__item a{
+    color: $mc2;
+  }
+
+  .header-lang-wrap::after {
+    content: url(../images/arrow-small-grey.svg);
+    display: block;
+    position: absolute;
+    top: 0%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 6px;
+    transition: all ease-in-out 0.3s;
+  }
+
+  &.bg-header {
+    background: $mc2;
+
+    #change-color {
+      fill: $mc1!important;
+      transition: all ease-in-out 0.4s;
+    }
+
+    .header-list-link {
+      color: $mc1;
+    }
+  
+    .header-number__link {
+      color: $mc1;
+    }
+
+    .header-lang-wrap::after {
+      content: url(../images/arrow-small.svg);
+      display: block;
+      position: absolute;
+      top: 0%;
+      right: 0;
+      transform: translateY(-50%);
+      height: 4px;
+      width: 6px;
+      fill: #2A2C65; 
+    }
+
+    .header-lang__item a{
+      color: $mc1;
+    }
+
+    .header-logo {
+      svg {
+        fill: $mc1;
+
+      }
+    }
+  }
+
+  
 
   &-inner {
     max-width: 100%;
@@ -44,6 +114,7 @@
     }
 
     svg {
+      fill: $mc2;
       height: 60px;
       width: 160px;
 
@@ -426,83 +497,5 @@
 .header-menu-link:hover,
 .header-menu-link:focus {
   color: $mc2;
-}
-
-#id-single-project,
-#id-about,
-#id-home-page {
-  .header {
-    background: transparent;
-
-    &.on {
-      background: $mc2;
-    }
-
-    #change-color {
-      fill: $textLightGrey!important;
-      transition: all ease-in-out 0.4s;
-    }
-
-    .header-list-link {
-      color: $textLightGrey;
-    }
-  
-    .header-number__link {
-      color: $textLightGrey;
-    }
-
-    .header-lang-wrap::after {
-      content: url(../images/arrow-small-grey.svg);
-      display: block;
-      position: absolute;
-      top: 0%;
-      right: 0;
-      transform: translateY(-50%);
-      height: 4px;
-      width: 6px;
-      transition: all ease-in-out 0.3s;
-    }
-
-    .header-lang__item a{
-      color: $textLightGrey;
-    }
-
-    
-  }
-  
-
-  .header.bg-header {
-    background: $mc2;
-
-    #change-color {
-      fill: $mc1!important;
-      transition: all ease-in-out 0.4s;
-    }
-
-    .header-list-link {
-      color: $mc1;
-    }
-  
-    .header-number__link {
-      color: $mc1;
-    }
-
-    .header-lang-wrap::after {
-      content: url(../images/arrow-small.svg);
-      display: block;
-      position: absolute;
-      top: 0%;
-      right: 0;
-      transform: translateY(-50%);
-      height: 4px;
-      width: 6px;
-      fill: #2A2C65; 
-    }
-
-    .header-lang__item a{
-      color: $mc1;
-    }
-  }
-
 }
 

@@ -1,175 +1,103 @@
 .about-page {
     &-wrap {
+    }
+
+    &-main-intro {
+        background-image: url('../images/aboutPage/bg.jpg');
 
     }
-    &-intro {
-        height: 100vh;
+    &-list-wrap {
+        padding: 100px 70px 150px 70px;
+        background: $mc1;
         width: 100%;
-        background-image: url(../images/aboutPage/bg.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-        padding: 50px 80px;
-        position: relative;
-
-        @include tablet {
-            padding: 50px 10px;
-        }
-
-        @include mobile {
-            padding: 60px 12px;
-        }
-
-        
-
-    }
-    &-intro-wrap {
-        width: 100%;
-        position: sticky;
-        z-index: 5;
-        background-color: transparent;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: initial;
-        
-    }
-    &__title {
-        color: $wc;
-        margin-bottom: 10px;
-
-        @include mobile {
-            margin-bottom: 12px;
-        }
-
-
-    }
-    &__descr {
-        display: block;
-        color: #D5DEE8;
-        margin-bottom: 20px;
-
-        @include mobile {
-            margin-bottom: 12px;
-            width: 70%;
-        }
-
-    }
-    &-intro-img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        left: 0;
-        top: 0;
-        z-index: 2;
-        pointer-events: none;
-
-        img {
-            position: relative;
-            z-index: -1;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-
-    &-intro-link {
-        
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        color: #B4C4D5;
-        z-index: 10;
-        pointer-events: all;
-        width: 20%;
-
-        @include mobile {
-            width: 100%;
-        }
-
-    }
-
-    &-intro-btn {
-        margin-right: 20px;
-        
-
-    }
-    &-list {
-        display: flex;
-        flex-direction: column;
-        background: $mc2;
-
-        @include mobile {
-            padding-top: 45px;
-
-        }
-
-    }
-    &-item {
-        display: flex;
-        background: $mc2;
-        max-height: 800px;
-
-        @include tablet {
-            flex-direction: column;
-            max-height: fit-content;
-        }
-
-
-        &:nth-child(2n) {
-            flex-direction: row-reverse;
-
-            @include tablet {
-                flex-direction: column;
-            }
-        }
-
-
-    }
-    &-item-intro {
-        width: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 0 80px;
 
-        @include tablet {
-            width: 100%;
-            padding: 73px 10px;
-        }
-
-        @include mobile {
-            padding: 40px 12px;
-        }
 
     }
-    &-item__title {
-        color: $bc;
+    &-list-intro {
+        width: 40%;
+        margin-bottom: 50px;
+
+
+    }
+    &-list-descr-upper {
+        color: $mc2;
+        margin-bottom: 20px;
+        text-align: center;
+
+    }
+    &-list-descr{
+        color: $textGrey;
+        margin-bottom: 100px;
+        text-align: center;
+
+    }
+    &-list-title{
+        color: $mc2;
+        display: block;
+        text-align: center;
+
+    }
+    &-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+
+    }
+    &-card {
+        width: calc(33.3% - 33.3px);
+
+    }
+
+    &-card-img-wrap {
         margin-bottom: 20px;
     }
-    &-item__descr {
-        color: $textCardGrey;
+    &-card-title {
+        color: $mc2;
+        margin-bottom: 8px;
 
     }
-    &-item-img-wrap {
-        width: 50%;
+    &-card-number {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
 
-        @include tablet {
-            width: 100%;
+        svg {
+            fill: none;
+            stroke: $textGrey;
+            height: 24px;
+            width: 24px;
+
         }
 
-        @include mobile {
-            height: 412px;
+    }
+    &-card-number__link {
+        color: $textGrey;
+        margin-left: 12px;
+
+    }
+    &-card-email {
+        display: flex;
+        align-items: center;
+
+        svg {
+            fill: none;
+            stroke: $textGrey;
+            height: 24px;
+            width: 24px;
+
         }
 
     }
-    &-item-img {
-        height: 100%;
-        object-fit: cover;
-    }
+    &-card-email__link {
+        color: $textGrey;
+        margin-left: 12px;
 
+    }
+    
 }

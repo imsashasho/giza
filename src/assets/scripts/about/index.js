@@ -1,1 +1,2 @@
-import './animation';
+import '../common/lenisScroll';
+import '../common/paralaxImages';

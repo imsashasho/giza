@@ -1,9 +1,6 @@
-import { gsap, ScrollTrigger, ScrollToPlugin } from 'gsap/all';
+import { gsap, ScrollTrigger} from 'gsap/all';
+
 gsap.registerPlugin(ScrollTrigger);
-
-
-
-
 
 const stage = document.querySelector('.page__content');
 const slides = document.querySelectorAll('.slide');
@@ -15,7 +12,7 @@ function initIntro() {
   let tl = gsap.timeline({ delay: 0.3 });
 
   tl.fromTo(
-    '.main-screen-intro-logo',
+    '.main-screen-intro-logo svg',
     { x: 300, y: 0 },
     {
       y: 0,
@@ -50,7 +47,7 @@ function initIntro() {
   });
 
   stl
-    .to('.main-screen-intro-logo', {
+    .to('.main-screen-intro-logo svg', {
       y: 50,
       ease: 'power4.in',
       duration: 1,
@@ -89,19 +86,6 @@ function initSlides() {
       0.4,
     );
   });
-
-  // External footer link scroll animation
-
-  gsap.from('.footer-up', {
-    scrollTrigger: {
-      trigger: '.footer',
-      scrub: 2,
-      start: '50% 100%', // position of trigger meets the scroller position
-      end: '0% 0%',
-    },
-    y: 150,
-    ease: 'sine',
-  });
 }
 
 function initParallax() {
@@ -128,11 +112,6 @@ function initParallax() {
             trigger: slide,
             scrub: true,
             start: 'top bottom', // position of trigger meets the scroller position
-            //   snap: {
-            //     snapTo: 0.5, // 0.5 'cause the scroll animation range is 200vh for parallax effect
-            //     duration: 1,
-            //     ease: 'power4.inOut',
-            //   },
           },
           ease: 'sine',
         },

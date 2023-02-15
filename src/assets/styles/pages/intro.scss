@@ -25,11 +25,11 @@
 	}
 	&-intro-text {
 		padding: 80px 122px 97px 60px;
-		height: 100px;
-		// height: fit-content;
+		// height: 100px;
+		height: fit-content;
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		// align-items: center;
 
 	}
 	&-intro-logo {

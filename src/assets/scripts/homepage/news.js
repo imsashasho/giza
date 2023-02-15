@@ -1,5 +1,4 @@
 import { fadeUpLines, splitToLines } from '../modules/effects/animationHelpers';
-import { paralax } from '../common/paralax';
 
 const prevIndex = 0;
 const swiper1 = new Swiper('.news-gallery-swiper', {
