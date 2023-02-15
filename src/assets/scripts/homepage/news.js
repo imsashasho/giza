@@ -97,7 +97,7 @@ const swiper2 = new Swiper('.news-intro-swiper', {
   height: 600,
   centeredSlides: false,
   watchSlidesVisibility: true,
-  speed: 600,
+  speed: 900,
   effect: 'fade',
   fadeEffect: {
     crossFade: true,
@@ -133,18 +133,20 @@ const swiper2 = new Swiper('.news-intro-swiper', {
       document.querySelectorAll('.news-intro-swiper-wrap .text-to-animate-js').forEach(text => {
         splitToLines(text);
         e.slidesForAnimation.push(text);
-        // console.log(document.querySelectorAll('.text-to-animate-js'));
       });
-      document.querySelectorAll('.news .news-intro-slide').forEach(text => {
-        splitToLines(text);
-        e.titlesForAnimation.push(text);
-      });
+      document
+        .querySelectorAll('.news .news-intro-slide:not(.btn-container):not(.btn-container--light)')
+        .forEach(text => {
+          console.log('kkkk');
+          splitToLines(text);
+          e.titlesForAnimation.push(text);
+        });
     },
     activeIndexChange: e => {
       if (!e.slidesForAnimation) return;
       const currentText = e.slidesForAnimation[e.activeIndex];
       const currentTitle = e.titlesForAnimation[e.activeIndex];
-      if (!currentText) return;
+      if (!currentTitle) return;
       fadeUpLines(currentText);
       fadeUpLines(currentTitle);
     },

@@ -24,44 +24,70 @@ a {
   width: fit-content;
   height: 60px;
   overflow: hidden;
-  border: 1px solid #000;
+  border: 1px solid $mc1;
   transition: 0.5s;
+
+  @include tabletLarge {
+    height: 50px;
+  }
+}
+
+.btn-container--light {
+
+  border: 1px solid $mc2;
+
+
+}
  
- @-webkit-keyframes ani {
-  from {
-   -webkit-mask-position: 0 0;
-   mask-position: 0 0;
+  @-webkit-keyframes ani {
+    from {
+     -webkit-mask-position: 0 0;
+     mask-position: 0 0;
+    }
+   
+    to {
+     -webkit-mask-position: 100% 0;
+     mask-position: 100% 0;
+    }
+  }
+   
+   @keyframes ani {
+    from {
+     -webkit-mask-position: 0 0;
+     mask-position: 0 0;
+    }
+   
+    to {
+     -webkit-mask-position: 100% 0;
+     mask-position: 100% 0;
+    }
+  }
+   
+   @-webkit-keyframes ani2 {
+    from {
+     -webkit-mask-position: 100% 0;
+     mask-position: 100% 0;
+    }
+   
+    to {
+     -webkit-mask-position: 0 0;
+     mask-position: 0 0;
+    }
+  }
+   
+   @keyframes ani2 {
+    from {
+     -webkit-mask-position: 100% 0;
+     mask-position: 100% 0;
+    }
+   
+    to {
+     -webkit-mask-position: 0 0;
+     mask-position: 0 0;
+    }
   }
  
-  to {
-   -webkit-mask-position: 100% 0;
-   mask-position: 100% 0;
-  }
- }
- 
- @-webkit-keyframes ani {
-  from {
-   -webkit-mask-position: 0 0;
-   mask-position: 0 0;
-  }
- 
-  to {
-   -webkit-mask-position: 100% 0;
-   mask-position: 100% 0;
-  }
- }
- 
- @keyframes ani {
-  from {
-   -webkit-mask-position: 0 0;
-   mask-position: 0 0;
-  }
- 
-  to {
-   -webkit-mask-position: 100% 0;
-   mask-position: 100% 0;
-  }
- }
+
  
 .btn {
   border: none;
@@ -82,25 +108,24 @@ a {
   text-transform: uppercase;
   color: $mc2;
   width: 101%;
-   height: 100%;
- 
-   @include button(#000, "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png",
-   2300%,
-   100%,
-   none,
-   #fff);
-   cursor: pointer;
-   -webkit-animation: ani2 0.7s steps(22) forwards;
-    animation: ani2 0.7s steps(22) forwards;
+  height: 100%; 
+    @include button($mc1, "../images/btn-img.png",
+    2300%,
+    100%,
+    none,
+    $mc2);
+  cursor: pointer;
+  -webkit-animation: ani2 0.7s steps(22) forwards;
+  animation: ani2 0.7s steps(22) forwards;
 
-    &:hover {
+  &:hover {
     -webkit-animation: ani 0.7s steps(22) forwards;
     animation: ani 0.7s steps(22) forwards;
-    }
   }
 
   @include tabletLarge {
     font-size: 14px;
+    height: 50px;
 
   }
 
@@ -114,6 +139,21 @@ a {
   color: $mc2;
   background: transparent;
   border: 1px solid $textGrey;
+  width: 102%;
+
+  @include button($mc2, "../images/btn-img.png",
+    2300%,
+    100%,
+    none,
+    $mc1);
+
+    -webkit-animation: ani2 0.7s steps(22) forwards;
+    animation: ani2 0.7s steps(22) forwards;
+  
+    &:hover {
+      -webkit-animation: ani 0.7s steps(22) forwards;
+      animation: ani 0.7s steps(22) forwards;
+    }
 
   @include tabletLarge {
     font-size: 14px;
@@ -142,6 +182,17 @@ a {
   line-height: 120%;
   text-transform: uppercase;
   color: $mc1;
+
+  @include tabletLarge {
+    height: 50px;
+    font-size: 14px;
+  }
+
+}
+
+.btn-mask--light {
+  color: $mc2;
+  background: $mc1;
 
 }
 

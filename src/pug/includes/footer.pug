@@ -16,9 +16,9 @@ footer.footer
                     .footer-form__field.form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
                         .input-message(data-input-message)
                         input.footer-form__input(type="tel" name="phone" placeholder="Phone")
-                    .footer-form__btn-wrap
-                        button.footer-form__btn.btn-small.js-call-submit(type="submit" data-btn-submit-footer)
-                            +svg('arrow')
+                    .footer-form__btn-wrap.btn-container
+                        .btn-mask Submit
+                        button.footer-form__btn.btn.btn.js-call-submit(type="submit" data-btn-submit-footer) SUBMIT
                             span.footer-form__btn-text(data-btn-submit-text)
         button.footer-up.btn-small
             +svg('arrow')
