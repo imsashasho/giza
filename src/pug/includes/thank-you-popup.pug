@@ -1,11 +1,14 @@
 .thank-you-popup.overlay
-    .noise
-    .popup
-      .thank-you-popup-icon-wrap 
-        +svg('logo-small')
-      .thank-you-popup__text 
-        h1.thank-you-popup__title.text-medium-uppercase Повідомлення надіслано
-        p.thank-you-popup__descr.text-descr Дякую за звернення. Чекайте на дзвінок від наших менеджерів. Бажаємо приємного дня та гарного настрою =)
-      button.btn.thank-you-popup__btn Закрити
-      .close-popup
+  .popup
+    .thank-you-popup__text 
+      h1.thank-you-popup__title Your message was sent successfully
+      p.thank-you-popup__descr.text-descr-uppercase Thank you for your feedback. Wait for a call from our managers.
+      .btn-container.btn-container-border
+        .btn-mask Close
+        button.btn.thank-you-popup__btn Close
+    .thank-you-popup-icon-wrap 
+      .thank-you-popup-icon
+        +svg('done')
+
+  .close-popup
         

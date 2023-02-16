@@ -15,6 +15,19 @@
 
   &.on {
     background: $mc2;
+
+    .header-number__link-mobile {
+      background: $mc1;
+
+    }
+
+    .header-toggle-menu__icon {
+      background: $mc1;
+    }
+
+    #header-toggle-menu.on span {
+      background: transparent;
+    }
   }
 
   #change-color {
@@ -60,6 +73,32 @@
   
     .header-number__link {
       color: $mc1;
+    }
+
+    .header-number__link-mobile {
+      background: $mc1;
+      svg {
+        stroke: $mc2;
+        fill: none;
+      }
+  
+    }
+
+    .header-toggle-menu__icon {
+      background: $mc1;
+    }
+
+    #header-toggle-menu span, #header-toggle-menu span:after, #header-toggle-menu span:before {
+      background-color: $mc2;
+    }
+
+    .header-toggle-menu__title,
+    .header-toggle-menu__title--hidden {
+
+      @include tablet { 
+        color: $mc1;
+
+      }
     }
 
     .header-lang-wrap::after {
@@ -109,8 +148,8 @@
     height: 60px;
     width: 160px;
     @include mobile {
-      width: 105px;
-      height: 24.9px;
+      width: 88px;
+      height: 33px;
     }
 
     svg {
@@ -119,9 +158,25 @@
       width: 160px;
 
       @include mobile {
-        width: 105px;
-        height: 24.9px;
+        width: 88px;
+        height: 33px;
       }
+    }
+  }
+
+  &-group-wrap  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+
+    @include tablet {
+      width: 20%;
+      order: 3;
+    }
+
+    @include mobile {
+      width: 60%;
     }
   }
   &-lang-wrap {
@@ -167,17 +222,18 @@
 
   }
   &-list-wrap {
-    width: 31%;
-
-    @include tabletLarge {
-      width: 34%;
-    }
+    width: 35%;
 
     @include tablet {
+      order: 2;
+    }
+
+    @include mobile {
       display: none;
     }
 
   }
+
   &-list {
     display: flex;
 
@@ -201,11 +257,6 @@
       transition: all ease-in-out 0.3s;
     }
 
-    @include mobile {
-      display: none;
-
-    }
-
   }
 
   &-call-wrap-mobile {
@@ -217,29 +268,105 @@
       justify-content: center;
     }
   }
+
+  &-number__link-mobile {
+    background: $mc2;
+    svg {
+      stroke: $mc1;
+      fill: none;
+    }
+
+  }
   &-number-wrap {
     margin-right: 20px;
 
+    @include tablet {
+      display: none;
+    }
+
   }
+
   &-number__link{
     position: relative;
 
   }
-  &-callback-wrap {
-    
-    
-
-  }
   &-callback__btn {
-    height: 50px;
 
+    @include tablet {
+      display: none;
+    }
+  
+  }
+
+  &-btn-container {
+    @include mobile {
+      height: 42px;
+    }
+  }
+
+  &-btn-mask {
+    @include tablet {
+      display: none;
+    }
+    @include mobile {
+      height: 42px;
+    }
+
+    
+  }
+
+  &-btn-mask-mobile {
+    display: none;
+    @include mobile {
+      display: flex;
+      height: 42px;
+    }
+
+    svg {
+      @include tablet {
+        stroke: $mc1;
+        height: 24px;
+        width: 24px;
+      }
+
+      @include mobile {
+        height: 16px;
+        width: 16px;
+      }
+    }
+  }
+
+  &-callback__btn-mobile {
+    display: none;
+    @include tablet {
+      display: flex;
+      padding: 12px;
+    }
+
+    @include mobile {
+      padding: 10px;
+      height: 42px;
+      width: 42px;
+    }
+
+    svg {
+      @include tablet {
+        height: 24px;
+        width: 24px;
+      }
+
+      @include mobile {
+        height: 16px;
+        width: 16px;
+      }
+    }
   }
 }
 
 .header-burger__group {
 
   display: none;
-    @include tablet {
+    @include mobile {
       display: block;
     }
 
@@ -296,7 +423,7 @@
     line-height: 120%;
     letter-spacing: -0.05em;
     text-transform: uppercase;
-    color: $mc1;
+    color: $mc2;
     margin-right: 12px;
     transition: all ease-in-out 0.3s;
 
@@ -333,7 +460,7 @@
 #header-toggle-menu span:before {
   width: 22px;
   height: 2px;
-  background-color: $wc;
+  background-color: $mc1;
   transition: all 0.3s;
   backface-visibility: hidden;
   border-radius: 2px;
@@ -347,12 +474,16 @@
   @include tablet   {
     height: 50px;
     width: 50px;
-    background: $mc1;
+    background: $mc2;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 17px;
+  }
+  @include mobile {
+    width: 42px;
+    height: 42px;
   }
   span {
     display: block;
@@ -397,15 +528,9 @@
 #header-toggle-menu.on:hover {
   & span::after {
     background-color: $mc2;
-    @include tablet {
-      background-color: $wc;
-    }
   }
   & span::before {
     background-color: $mc2;
-    @include tablet {
-      background-color: $wc;
-    }
 
   }
   & .header-toggle-menu__title--hidden {

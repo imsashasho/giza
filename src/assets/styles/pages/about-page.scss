@@ -15,11 +15,24 @@
         align-items: center;
         justify-content: center;
 
+        @include tablet {
+            padding: 50px 10px 70px 10px;
+        }
+
+        @include mobile {
+            padding: 40px 10px;
+        }
+
 
     }
     &-list-intro {
         width: 40%;
         margin-bottom: 50px;
+
+        @include tablet {
+            width: 100%;
+            margin-bottom: 20px;
+        }
 
 
     }
@@ -34,6 +47,10 @@
         margin-bottom: 100px;
         text-align: center;
 
+        @include tablet {
+            margin-bottom: 40px;
+        }
+
     }
     &-list-title{
         color: $mc2;
@@ -47,10 +64,44 @@
         align-items: center;
         width: 100%;
 
+        @include tablet {
+            flex-wrap: wrap;
+        }
+
 
     }
     &-card {
         width: calc(33.3% - 33.3px);
+
+        @include tablet {
+            width: calc(50% - 5px);
+            margin-top: 50px;
+        }
+
+        @include mobile {
+            width: 100%;
+            margin-top: 40px;
+                
+        }
+        
+
+        &:nth-child(-n+2) {
+            @include tablet {
+                margin-top: 0;
+            }
+
+            @include mobile {
+                margin-top: 40px;
+
+            }
+        }
+
+        &:first-child {
+            @include mobile {
+                margin-top: 0;
+                
+            }
+        }
 
     }
 

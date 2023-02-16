@@ -66,6 +66,19 @@ export const contactForm = (formRef, onSuccess) => {
           valid: false,
           error: [],
         },
+        email: {
+          inputWrapper: new SexyInput({
+            animation: 'none',
+            $field: formRef.querySelector('[data-field-email]'),
+          }),
+          rule: yup
+            .string()
+            .required(i18next.t('required'))
+            .trim(),
+          defaultMessage: i18next.t('name'),
+          valid: false,
+          error: [],
+        },
       },
     },
   });

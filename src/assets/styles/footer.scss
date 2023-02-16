@@ -37,13 +37,17 @@
     }
 
     @include mobile {
-      padding: 60px 12px 115px 12px;
+      padding: 50px 12px 100px 12px;
      
     }
   }
   &-menu {
     display: flex;
     flex-direction: column;
+
+    @include mobile {
+      text-align: center;
+    }
 
   }
   &-menu-link {
@@ -96,6 +100,10 @@
     color: $textLightGrey;
     margin-bottom: 40px;
 
+    @include tablet {
+      margin-bottom: 32px;
+    }
+
     @include mobile {
       width: 100%;
     }
@@ -105,6 +113,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
 
   }
 
@@ -116,6 +129,7 @@
   &-form__field {
     margin-top: 0!important;
     height: 60px!important;
+    width: 75%!important;
   }
 
   &-form__input {
@@ -144,10 +158,10 @@
     display: flex;
     align-items: center;
     margin-left: 20px;
+    width: 40%;
   }
 
   &-form__btn {
-    margin-right: 20px;
     position: relative;
     svg {
       transform: rotate(180deg);
@@ -174,7 +188,7 @@
     z-index: 3;
 
     @include tablet {
-      top: 100px;
+      top: 375px;
       right: 10px;
     }
 

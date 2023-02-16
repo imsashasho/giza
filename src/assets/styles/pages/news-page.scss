@@ -13,6 +13,10 @@
         padding: 70px;
         background: $mc1;
 
+        @include tablet {
+            padding: 10px 10px 50px 10px;
+        }
+
     }
 
 

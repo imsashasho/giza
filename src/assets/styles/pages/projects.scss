@@ -14,7 +14,7 @@
         }
 
         @include mobile {
-            padding: 60px 0;
+            padding: 50px 0;
         }
 
     }
@@ -35,7 +35,12 @@
             position: relative;
             bottom: auto;
             padding: 0 10px;
-            margin-top: 40px;
+            margin-top: 80px;
+        }
+
+        @include mobile {
+            margin-top: 30px;
+            padding: 0 12px;
         }
         
 
@@ -119,7 +124,14 @@
 
             img {
                 object-fit: cover;
-                // height: 482px;
+
+                @include tablet {
+                    height: 318px;
+                }
+
+                @include mobile {
+                    height: 190px;
+                }
                 // height: 482px;
             }
         }
@@ -136,7 +148,6 @@
 
         @include mobile {
             flex-direction: column;
-            align-items: flex-start;
         }
 
     }
@@ -149,6 +160,7 @@
 
             @include mobile {
                 margin-bottom: 0;
+                text-align: center;
             }
             &:last-child {
                 margin-bottom: 0;
@@ -170,6 +182,7 @@
         @include mobile {
             width: 100%;
             margin-top: 12px;
+            text-align: center;
         }
 
     }

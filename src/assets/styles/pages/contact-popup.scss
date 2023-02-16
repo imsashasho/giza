@@ -16,15 +16,30 @@
 	  }
 	}
 
+    &__text-wrap {
+      width: 50%;
+      background: $mc1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 84px 70px;
+
+      svg {
+        fill: $mc2;
+        height: 50px;
+        width: 133px;
+      }
+    }
+
     &__text {
-        margin-bottom: 40px;
         text-align: left;
         z-index: 10;
     }
 
     &__title {
+        font-size: 120px;
         margin-bottom: 8px;
-        color: $bc;
+        color: $mc2;
     }
 
     &__descr {
@@ -39,6 +54,8 @@
 
     &-form {
       z-index: 10;
+      width: 50%;
+      padding: 84px 70px;
     }
 
     &-form__hint {
@@ -98,29 +115,34 @@
   }
 }
 
-.popup {
-    position: absolute;
-  width: 50%;
-  height: 100%;
-  right: 0;
-  top: 0;
-  padding: 0 128px;
-  box-sizing: border-box;
-  // background-image: url('../images/about/noise.jpg');
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  @include tablet {
-    width: 80%;
-    padding: 0 80px;
-  }
-  @include mobile {
-    width: 100%;
-    padding: 68px 20px;
-  }
+#popup-form {
+  width: 90%;
 
 }
+
+// .popup {
+//     position: absolute;
+//   width: 50%;
+//   height: 100%;
+//   right: 0;
+//   top: 0;
+//   padding: 0 128px;
+//   box-sizing: border-box;
+//   // background-image: url('../images/about/noise.jpg');
+//   background-size: cover;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   @include tablet {
+//     width: 80%;
+//     padding: 0 80px;
+//   }
+//   @include mobile {
+//     width: 100%;
+//     padding: 68px 20px;
+//   }
+
+// }
 .close-popup {
 	position: absolute;
 	top: 50px;

@@ -7,8 +7,8 @@
     overflow: hidden !important;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: $wc;
-    width: 122px;
+    color: $mc2;
+    width: fit-content;
     &:nth-last-child(2) {
       pointer-events: none;
       cursor: none;

@@ -1,4 +1,4 @@
-import { gsap, ScrollTrigger} from 'gsap/all';
+import { gsap, ScrollTrigger } from 'gsap/all';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,26 +37,26 @@ function initIntro() {
 
   // set up scrollTrigger animation for the when the intro scrolls out
 
-  let stl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.main-screen',
-      scrub: 1,
-      start: 'top bottom', // position of trigger meets the scroller position
-      end: 'bottom top',
-    },
-  });
+  //   let stl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: '.main-screen',
+  //       scrub: 1,
+  //       start: 'top bottom', // position of trigger meets the scroller position
+  //       end: 'bottom top',
+  //     },
+  //   });
 
-  stl
-    .to('.main-screen-intro-logo svg', {
-      y: 50,
-      ease: 'power4.in',
-      duration: 1,
-    })
-    .to('.main-screen-intro-descr', {
-      y: 50,
-      ease: 'power4.in',
-      duration: 1,
-    });
+  //   stl
+  //     .to('.main-screen-intro-logo svg', {
+  //       y: 50,
+  //       ease: 'power4.in',
+  //       duration: 1,
+  //     })
+  //     .to('.main-screen-intro-descr', {
+  //       y: 50,
+  //       ease: 'power4.in',
+  //       duration: 1,
+  //     });
 }
 
 function initSlides() {
@@ -103,11 +103,11 @@ function initParallax() {
       gsap.fromTo(
         image,
         {
-          y: '-10vh',
+          y: '-20px',
           scale: 1.3,
         },
         {
-          y: '10vh',
+          y: '5vh',
           scrollTrigger: {
             trigger: slide,
             scrub: true,

@@ -4,11 +4,11 @@ import axios from 'axios';
 import initView from './form-view';
 import { langDetect } from '../../../assets/scripts/modules/helpers/helpers';
 
-const sendForm = async data =>
-  // const response = await axios.post('/wp-admin/admin-ajax.php', data);
-  // return response.data;
-  ({ code_error: null })
-;
+const sendForm = async data => {
+  const response = await axios.post('/wp-admin/admin-ajax.php', data);
+  console.log(response);
+  return response.data;
+};
 
 /*  */
 const lang = langDetect();
@@ -51,9 +51,9 @@ const lang = langDetect();
           phone: 'Телефон:*',
           send: 'Надіслати',
           sending: 'Відправлення',
-          field_too_short: 'телефон має містити принаймні {{cnt}} символів',
-          field_too_long: 'телефон має містити не більше {{cnt}} символів',
-          only_number: 'тут лише цифри',
+          field_too_short: 'Телефон має містити принаймні {{cnt}} символів',
+          field_too_long: 'Телефон має містити не більше {{cnt}} символів',
+          only_number: 'Тут лише цифри',
           required: 'Це поле є обов`язковим',
           sendingSuccessTitle: 'Повідомлення надіслано',
           sendingSuccessText: 'Чекайте відповіді наших менеджерів',
@@ -142,7 +142,7 @@ export default class FormMonster {
   }
 
   changeInput() {
-    return (e) => {
+    return e => {
       /*  */
       e.preventDefault();
       this.watchedState.status = 'filling';
@@ -151,7 +151,7 @@ export default class FormMonster {
       /*  */
       const error = this.validate(formData);
       /*  */
-      this.fieldsKey.map((key) => {
+      this.fieldsKey.map(key => {
         const field = this.elements.fields[key];
         field.valid = true;
         field.error = [];
@@ -176,7 +176,7 @@ export default class FormMonster {
   }
 
   submitForm() {
-    return async (e) => {
+    return async e => {
       /*  */
       e.preventDefault();
       this.changeInput()(e);
@@ -191,7 +191,7 @@ export default class FormMonster {
           /* eslint-disable-next-line */
           const { error, code_error } = await sendForm(formData);
 
-          if (!code_error) {
+          if (error === 0) {
             this.watchedState.status = 'successSand';
             return true;
           }
@@ -210,7 +210,7 @@ export default class FormMonster {
 
   listers() {
     this.elements.$form.addEventListener('submit', this.submitForm(this.watchedState));
-    this.fieldsKey.map((key) => {
+    this.fieldsKey.map(key => {
       const { input } = this.elements.fields[key].inputWrapper;
       input.addEventListener('input', this.changeInput(this.watchedState));
       return null;
