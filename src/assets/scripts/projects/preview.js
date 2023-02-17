@@ -35,7 +35,7 @@ export class Preview {
     this.DOM.imageWrap = this.DOM.el.querySelector('.preview__img-wrap');
     this.DOM.image = this.DOM.imageWrap.querySelector('.preview__img');
     // this.DOM.sliderWrap = this.DOM.image.querySelector('.projects-swiper-wrapper');
-    this.DOM.imageInner = this.DOM.image.querySelectorAll('.preview__img-inner');
+    this.DOM.imageInner = [...this.DOM.image.querySelectorAll('.preview__img-inner')];
     this.DOM.title = this.DOM.el.querySelector('.preview__title');
     this.DOM.titleInner = [...this.DOM.title.querySelectorAll('.oh__inner')];
     this.DOM.description = this.DOM.el.querySelector('.preview__desc');

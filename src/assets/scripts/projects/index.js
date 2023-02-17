@@ -73,13 +73,13 @@ const animateOnScroll = () => {
 
 const getAdjacentItems = item => {
   let arr = [];
-  console.log('otm', item);
+
   for (const [position, otherItem] of previewItems.entries()) {
     if (item != otherItem && isInViewport(otherItem.DOM.el)) {
       arr.push({ position: position, item: otherItem });
     }
+    console.log({ otherItem });
   }
-  console.log('otherItem', arr);
 
   return arr;
 };
@@ -97,10 +97,10 @@ const showContent = item => {
         // Stop the "animate on scroll" timeline for this item
         //item.scrollTimeline.pause();
         // Stop the Lenis instance
-        lenis.stop();
+        // lenis.stop();
 
         // Overflow hidden and pointer events control class
-        document.body.classList.add('content-open');
+        document.querySelector('.projects-content-container').classList.add('content-open');
         // Shows current content element
         item.content.DOM.el.classList.add('content--current');
 
@@ -239,10 +239,10 @@ const hideContent = () => {
         //item.scrollTimeline.play();
 
         // Start the Lenis instance
-        lenis.start();
+        // lenis.start();
 
         // Overflow hidden and pointer events control class
-        document.body.classList.remove('content-open');
+        document.querySelector('.projects-content-container').classList.remove('content-open');
         // Hides current content element
         item.content.DOM.el.classList.remove('content--current');
 

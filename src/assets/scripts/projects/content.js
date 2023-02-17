@@ -28,8 +28,8 @@ export class Content {
     this.DOM.el = DOM_el;
     this.DOM.title = this.DOM.el.querySelector('.content__title');
     this.DOM.titleInner = [...this.DOM.title.querySelectorAll('.oh__inner')];
-    this.DOM.metaInner = this.DOM.el.querySelectorAll('.content__meta > .oh__inner');
-    this.DOM.text = this.DOM.el.querySelectorAll('.content__text');
+    this.DOM.metaInner = [...this.DOM.el.querySelectorAll('.content__meta > .oh__inner')];
+    this.DOM.text = [...this.DOM.el.querySelectorAll('.content__text')];
     this.multiLine = new TextLinesReveal(this.DOM.text);
     this.DOM.thumbs = [...this.DOM.el.querySelectorAll('.content__thumbs-item')];
   }
