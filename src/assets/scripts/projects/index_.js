@@ -17,10 +17,13 @@ previewElems.forEach((item, pos) => {
 });
 const backCtrl = document.querySelector('.action--back');
 
+console.log(previewItems);
+
 // Smooth scrolling.
 let lenis;
+
 // Current open item's position
-let currentItem = -1;
+let currentItem = 0;
 
 let isAnimating = false;
 
@@ -31,16 +34,18 @@ const initSmoothScrolling = () => {
     smooth: true,
     direction: 'vertical',
   });
-  const scrollFn = time => {
+  const raf = time => {
     lenis.raf(time);
-    requestAnimationFrame(scrollFn);
+    requestAnimationFrame(raf);
   };
-  requestAnimationFrame(scrollFn);
+  requestAnimationFrame(raf);
 };
 
 const animateOnScroll = () => {
   for (const item of previewItems) {
     gsap.set(item.DOM.imageInner[0], { transformOrigin: '50% 0%' });
+
+    console.log('lolll', item.DOM.imageInner[0]);
 
     item.scrollTimeline = gsap
       .timeline({
@@ -75,12 +80,11 @@ const getAdjacentItems = item => {
   let arr = [];
   console.log('otm', item);
   for (const [position, otherItem] of previewItems.entries()) {
-    if (item != otherItem && isInViewport(otherItem.DOM.el)) {
+    if ((item = otherItem && isInViewport(otherItem.DOM.el))) {
       arr.push({ position: position, item: otherItem });
     }
   }
   console.log('otherItem', arr);
-
   return arr;
 };
 
@@ -89,6 +93,8 @@ const showContent = item => {
   const itemIndex = previewItems.indexOf(item);
   const adjacentItems = getAdjacentItems(item);
   item.adjacentItems = adjacentItems;
+
+  console.log('pppp', previewItems);
 
   const tl = gsap
     .timeline({
@@ -228,8 +234,8 @@ const showContent = item => {
 
 const hideContent = () => {
   // the current open item
-
   const item = previewItems[currentItem];
+  console.log('this', item);
 
   gsap
     .timeline({
@@ -368,32 +374,32 @@ preloadImages('.preview__img-inner, .content__thumbs-item').then(_ => {
   initEvents();
 });
 
-// const initSwiper = el => {
-//   const swiper = new Swiper(el, {
-//     loop: true,
-//     keyboard: true,
-//     spaceBetween: 0,
-//     initialSlide: 0,
-//     slidesPerView: 1,
-//     lazy: true,
-//     watchSlidesVisibility: true,
-//     speed: 300,
-//     breakpoints: {
-//       1400: {
-//         loop: false,
-//       },
-//       768: {
-//         spaceBetween: 50,
-//         autoHeight: true,
-//       },
-//       360: {
-//         spaceBetween: 15,
-//         autoHeight: true,
-//       },
-//     },
-//   });
-// };
+const initSwiper = el => {
+  const swiper = new Swiper(el, {
+    loop: true,
+    keyboard: true,
+    spaceBetween: 0,
+    initialSlide: 0,
+    slidesPerView: 1,
+    lazy: true,
+    watchSlidesVisibility: true,
+    speed: 300,
+    breakpoints: {
+      1400: {
+        loop: false,
+      },
+      768: {
+        spaceBetween: 50,
+        autoHeight: true,
+      },
+      360: {
+        spaceBetween: 15,
+        autoHeight: true,
+      },
+    },
+  });
+};
 
-// const swiperContainersRef = document.querySelectorAll('.preview__img-wrap');
+const swiperContainersRef = document.querySelectorAll('.preview__img-wrap');
 
-// swiperContainersRef.forEach(ref => initSwiper(ref));
+swiperContainersRef.forEach(ref => initSwiper(ref));

@@ -9,9 +9,6 @@ import { preloader } from './common/loader';
 global.gsap = gsap;
 global.axios = axios;
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(Flip);
-
 // window.addEventListener('load', () => {
 //   setTimeout(() => {
 //     preloader.remove();
