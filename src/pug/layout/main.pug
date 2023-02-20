@@ -34,7 +34,7 @@ html(lang="uk")
     //- meta(name='theme-color', content='#000')
     //- meta(name='msapplication-navbutton-color', content='#000')
     //- meta(name='apple-mobile-web-app-status-bar-style', content='#000')
-    <script>var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e; }; supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+    <script>document.documentElement.className = "js"; var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e;}; supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables."); </script>
     block meta
     block head
 
@@ -65,14 +65,12 @@ html(lang="uk")
     //- .toast-wrapper(data-toast-wrapper)
     // START HEADER
     block header
-    // END HEADER
-    .page__inner(data-scroll-container)
-      .page__content
-        block content
+    
+    block content
 
       //.page__footer-wrapper
       // START FOOTER
-      block footer
+    block footer
       // END FOOTER
     block modal
     block scripts

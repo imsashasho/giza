@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   z-index: 50;
+  display: none;
   &-leaf {
     position: absolute;
     top: 0;

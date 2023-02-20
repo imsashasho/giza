@@ -26,34 +26,21 @@ let isAnimating = false;
 
 const initSmoothScrolling = () => {
   // Smooth scrolling initialization (using Lenis https://github.com/studio-freight/lenis)
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-    direction: 'vertical', // vertical, horizontal
-    gestureDirection: 'vertical', // vertical, horizontal, both
+  lenis = new Lenis({
+    lerp: 0.1,
     smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
+    direction: 'vertical',
   });
-
-  //get scroll value
-  //   lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
-  //     console.log({ scroll, limit, velocity, direction, progress });
-  //   });
-
-  const raf = time => {
+  const scrollFn = time => {
     lenis.raf(time);
-    requestAnimationFrame(raf);
+    requestAnimationFrame(scrollFn);
   };
-
-  requestAnimationFrame(raf);
+  requestAnimationFrame(scrollFn);
 };
 
 const animateOnScroll = () => {
   for (const item of previewItems) {
-    gsap.set(item.DOM.imageInner[0], { transformOrigin: '50% 0%' });
+    gsap.set(item.DOM.imageInner, { transformOrigin: '50% 0%' });
 
     item.scrollTimeline = gsap
       .timeline({
@@ -74,7 +61,7 @@ const animateOnScroll = () => {
         'start',
       )
       .to(
-        item.DOM.imageInner[0],
+        item.DOM.imageInner,
         {
           ease: 'none',
           scaleY: 1.8,
@@ -84,16 +71,16 @@ const animateOnScroll = () => {
   }
 };
 
-const getSiblings = item => {
+const getAdjacentItems = item => {
   let arr = [];
-
+  console.log('otm', item);
   for (const [position, otherItem] of previewItems.entries()) {
     if (item != otherItem && isInViewport(otherItem.DOM.el)) {
       arr.push({ position: position, item: otherItem });
     }
-  }
 
-  console.log({ arr });
+    console.log('venikotherItem', otherItem);
+  }
 
   return arr;
 };
@@ -101,8 +88,7 @@ const getSiblings = item => {
 const showContent = item => {
   // Get adjacent items. Need to hide them.
   const itemIndex = previewItems.indexOf(item);
-  console.log('venikstar', itemIndex);
-  const adjacentItems = getSiblings(item);
+  const adjacentItems = getAdjacentItems(item);
   item.adjacentItems = adjacentItems;
 
   const tl = gsap
@@ -112,10 +98,10 @@ const showContent = item => {
         // Stop the "animate on scroll" timeline for this item
         //item.scrollTimeline.pause();
         // Stop the Lenis instance
-        // lenis.stop();
+        lenis.stop();
 
         // Overflow hidden and pointer events control class
-        document.querySelector('.projects-content-container').classList.add('content-open');
+        document.body.classList.add('content-open');
         // Shows current content element
         item.content.DOM.el.classList.add('content--current');
 
@@ -134,8 +120,7 @@ const showContent = item => {
 
         // Save image current scaleY value
         const scaleY =
-          item.DOM.imageInner[0].getBoundingClientRect().height /
-          item.DOM.imageInner[0].offsetHeight;
+          item.DOM.imageInner.getBoundingClientRect().height / item.DOM.imageInner.offsetHeight;
         item.imageInnerScaleYCached = scaleY;
       },
       onComplete: () => (isAnimating = false),
@@ -184,7 +169,7 @@ const showContent = item => {
     )
     // Reset image scaleY values (changed during scroll)
     .to(
-      item.DOM.imageInner[0],
+      item.DOM.imageInner,
       {
         scaleY: 1,
       },
@@ -254,10 +239,10 @@ const hideContent = () => {
         //item.scrollTimeline.play();
 
         // Start the Lenis instance
-        // lenis.start();
+        lenis.start();
 
         // Overflow hidden and pointer events control class
-        document.querySelector('.projects-content-container').classList.remove('content-open');
+        document.body.classList.remove('content-open');
         // Hides current content element
         item.content.DOM.el.classList.remove('content--current');
 
@@ -348,7 +333,7 @@ const hideContent = () => {
     )
     // Reset image scaleY values
     .to(
-      item.DOM.imageInner[0],
+      item.DOM.imageInner,
       {
         scaleY: item.imageInnerScaleYCached,
       },
@@ -382,33 +367,3 @@ preloadImages('.preview__img-inner, .content__thumbs-item').then(_ => {
   animateOnScroll();
   initEvents();
 });
-
-// const initSwiper = el => {
-//   const swiper = new Swiper(el, {
-//     loop: true,
-//     keyboard: true,
-//     spaceBetween: 0,
-//     initialSlide: 0,
-//     slidesPerView: 1,
-//     lazy: true,
-//     watchSlidesVisibility: true,
-//     speed: 300,
-//     breakpoints: {
-//       1400: {
-//         loop: false,
-//       },
-//       768: {
-//         spaceBetween: 50,
-//         autoHeight: true,
-//       },
-//       360: {
-//         spaceBetween: 15,
-//         autoHeight: true,
-//       },
-//     },
-//   });
-// };
-
-// const swiperContainersRef = document.querySelectorAll('.preview__img-wrap');
-
-// swiperContainersRef.forEach(ref => initSwiper(ref));

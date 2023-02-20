@@ -10,6 +10,7 @@ const config = {
     singleProject: './src/assets/scripts/singleProject/index.js',
     projects: './src/assets/scripts/projects/index.js',
     news: './src/assets/scripts/news/index.js',
+    try: './src/assets/scripts/try/index.js',
   },
   output: {
     filename: '[name].bundle.js',
